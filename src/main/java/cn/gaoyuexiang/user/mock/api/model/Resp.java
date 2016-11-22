@@ -5,6 +5,10 @@ public class Resp {
 
 	public Resp() {}
 
+	public Resp(String status) {
+		this.status = status;
+	}
+
 	public String getStatus() {
 		return status;
 	}

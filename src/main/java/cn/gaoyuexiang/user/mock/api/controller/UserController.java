@@ -33,8 +33,10 @@ public class UserController {
 	public Resp rename(@RequestBody Rename rename,
 	                   @RequestHeader("uid") int uid,
 	                   @RequestHeader("token") String token) {
-
-		return null;
+		if (uid == 1000 && token.equals("token")) {
+			return new Resp("success");
+		}
+		return new Resp("failed");
 	}
 
 }
