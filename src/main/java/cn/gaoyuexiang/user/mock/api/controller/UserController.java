@@ -4,10 +4,7 @@ import cn.gaoyuexiang.user.mock.api.model.Rename;
 import cn.gaoyuexiang.user.mock.api.model.Resp;
 import cn.gaoyuexiang.user.mock.api.model.SignInResp;
 import cn.gaoyuexiang.user.mock.api.model.User;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController("user")
 public class UserController {
@@ -37,6 +34,12 @@ public class UserController {
 			return new Resp("success");
 		}
 		return new Resp("failed");
+	}
+
+	@GetMapping("logout")
+	public Resp logout(@RequestHeader("uid") int uid,
+	                   @RequestHeader("token") String token) {
+		return null;
 	}
 
 }
