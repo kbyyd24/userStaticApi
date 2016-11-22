@@ -1,9 +1,12 @@
 package cn.gaoyuexiang.user.mock.api.controller;
 
+import cn.gaoyuexiang.user.mock.api.model.Rename;
+import cn.gaoyuexiang.user.mock.api.model.Resp;
 import cn.gaoyuexiang.user.mock.api.model.SignInResp;
 import cn.gaoyuexiang.user.mock.api.model.User;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController("user")
@@ -24,6 +27,14 @@ public class UserController {
 			return new SignInResp(1000, "token", "success");
 		}
 		return new SignInResp("failed");
+	}
+
+	@PostMapping("rename")
+	public Resp rename(@RequestBody Rename rename,
+	                   @RequestHeader("uid") int uid,
+	                   @RequestHeader("token") String token) {
+
+		return null;
 	}
 
 }
