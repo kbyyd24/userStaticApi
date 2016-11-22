@@ -9,6 +9,32 @@
 
 
 apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'application'
+apply plugin: 'idea'
+
+mainClassName = 'cn.gaoyuexiang.user.mock.api.Main'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+buildscript {
+  ext {
+    springBootVersion = '1.4.2.RELEASE'
+  }
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+  }
+}
+
+jar {
+  baseName = 'user-static-api'
+  version = '1.0'
+}
 
 repositories {
   mavenLocal()
