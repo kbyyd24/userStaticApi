@@ -1,11 +1,21 @@
 package cn.gaoyuexiang.user.mock.api.model;
 
-public class SignUpResp {
+public class SignInResp {
 	private int uid;
 	private String token;
 	private String status;
 
-	public SignUpResp() {}
+	public SignInResp() {}
+
+	public SignInResp(int uid, String token, String status) {
+		this.uid = uid;
+		this.token = token;
+		this.status = status;
+	}
+
+	public SignInResp(String status) {
+		this.status = status;
+	}
 
 	public int getUid() {
 		return uid;
