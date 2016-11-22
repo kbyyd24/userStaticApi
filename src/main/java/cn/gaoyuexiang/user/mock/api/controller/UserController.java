@@ -19,7 +19,11 @@ public class UserController {
 
 	@PostMapping("login")
 	public SignInResp login(@RequestBody User user) {
-		return null;
+		if (user.getUsername().equals("唐旭东") &&
+			user.getPassword().equals("3C0EC236F00D3E8B3B0DA5F96B20622A")) {
+			return new SignInResp(1000, "token", "success");
+		}
+		return new SignInResp("failed");
 	}
 
 }
