@@ -17,4 +17,9 @@ public class UserController {
 		return new SignInResp("username_existed");
 	}
 
+	@PostMapping("login")
+	public SignInResp login(@RequestBody User user) {
+		return null;
+	}
+
 }
