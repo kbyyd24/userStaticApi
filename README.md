@@ -1,3 +1,3 @@
-# user_static_api
+# user static api
 
 写着玩的，给实验室的前端同学练手`ajax`
